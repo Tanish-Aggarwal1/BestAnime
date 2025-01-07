@@ -1,0 +1,68 @@
+<!--
+    Author:       Tanish Aggarwal
+    Program:      result.ejs
+    Date:         August 7, 2024
+    Updated:      -
+    Version:      1.0
+    Purpose:      To display the best-rated anime of a given year with an appropriate background image
+    Copyright:    
+        The materials provided in class and through SLATE are protected by copyright. They are intended 
+        for the personal, educational uses of students in this course and should not be shared externally 
+        or on websites such as Course Hero or OneClass. Unauthorized distribution may result in copyright 
+        infringement and violation of Sheridan policies.
+    Citations:    
+        Original source material can be found (subject to original author's copyrights):
+    Description: 
+        1. This page displays the best-rated anime of a given year.
+        2. If the anime image fails to load, an error message is displayed with a link to the image.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Anime</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+    <div class="BG" id="BGbox">
+        <a href="/" class="hp">homepage</a>
+        <h1>The best anime of the year: <%= year %></h1>
+        <p class="anime"><%= title %></p>
+        <p>Rated: <%= rating %></p>
+    </div>
+
+    <script>
+        (function () {
+            const body = document.getElementsByTagName("body")[0];
+            const BGbox = document.getElementById("BGbox");
+
+            console.log('HELLO');
+            const img = "<%= img %>";
+            console.log(img);  // Check the img variable
+
+            function setBackground(imageUrl) {
+                const tempImg = new Image();
+                tempImg.src = imageUrl;
+                tempImg.onload = function() {
+                    body.style.background = `url('${imageUrl}') no-repeat center center fixed`;
+                    body.style.backgroundSize = "cover";
+                };
+                tempImg.onerror = function() {
+                    console.error('Error loading image');
+                    BGbox.innerHTML += `<p>Image failed to load. Please try again later.</p><a href="${imageUrl}" target="_blank">here is a link to the image</a>`;
+                };
+            }
+
+            if (img === "No wallpaper found" || img === "Could not fetch wallpaper") {
+                console.error('Invalid image URL');
+                BGbox.innerHTML += `<p>${img}</p>`;
+            } else {
+                setBackground(img);
+            }
+        })();  // Correctly invoke the function immediately
+    </script>
+</body>
+</html>

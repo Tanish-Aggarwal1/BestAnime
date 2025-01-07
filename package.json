@@ -1,0 +1,27 @@
+{
+  "name": "assignment-4",
+  "version": "1.0.0",
+  "description": "returns best ranked anime of the year",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "keywords": [
+    "anime"
+  ],
+  "author": "Tanish Aggarwal",
+  "license": "ISC",
+  "dependencies": {
+    "anime-facts": "^6.3.14",
+    "anime-package-assignment4": "^2.0.0",
+    "anime-wallpaper": "^3.2.1",
+    "axios": "^1.7.3",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "waifu.it": "^1.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}

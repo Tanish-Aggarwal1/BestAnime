@@ -1,0 +1,38 @@
+<!--
+    Author:       Tanish Aggarwal
+    Program:      index.html
+    Date:         August 7, 2024
+    Updated:      -
+    Version:      1.0
+    Purpose:      To provide a form for the user to input a year and find the best-rated anime of that year
+    Copyright:    
+        The materials provided in class and through SLATE are protected by copyright. They are intended 
+        for the personal, educational uses of students in this course and should not be shared externally 
+        or on websites such as Course Hero or OneClass. Unauthorized distribution may result in copyright 
+        infringement and violation of Sheridan policies.
+    Citations:    
+        Original source material can be found (subject to original author's copyrights):
+    Description: 
+        1. This page provides a form for the user to input a year.
+        2. The form submits the year to the server to find the best-rated anime of that year.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Anime Awards</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="BG">
+        <h1>Find the Best Anime</h1>
+        <form action="/getAnime" method="post">
+            <label for="year">Year:</label>
+            <input type="number" name="year" id="year" required>
+            <input type="submit" value="Get Best Anime">
+        </form>
+    </div>
+</body>
+</html>

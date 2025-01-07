@@ -1,0 +1,41 @@
+<!--
+    Author:       Tanish Aggarwal
+    Program:      error.ejs
+    Date:         August 07, 2024
+    Updated:      -
+    Version:      1.0
+    Purpose:      To display an error message and an interesting fact about anime if the year is not valid
+    Copyright:    
+        The materials provided in class and through SLATE are protected by copyright. They are intended 
+        for the personal, educational uses of students in this course and should not be shared externally 
+        or on websites such as Course Hero or OneClass. Unauthorized distribution may result in copyright 
+        infringement and violation of Sheridan policies.
+    Citations:    
+        Original source material can be found (subject to original author's copyrights):
+    Description: 
+        1. This page displays an error message if the year is not valid.
+        2. It also displays an interesting fact about anime.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorry!</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        body {
+            background: url('./crying.webp') no-repeat center center fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="BG" id="sorry">
+        <h1>Sorry, the best anime for year: <%= year %> is not available</h1>
+        <h3 id="fact">But here is another interesting fact about anime:</h3>
+        <h2><%= fact %></h2>
+    </div>
+</body>
+</html>
